@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "comment-for-dev-and-prod-preview-script": "You can use the --require (-r) command line option to preload dotenv & dotenv-expand. By doing this, you do not need to require and load dotenv or dotenv-expand in your application code",
+    "comment-for-dev-and-prod-preview-script": "echo \"You can use the --require (-r) command line option to preload dotenv & dotenv-expand. By doing this, you do not need to require and load dotenv or dotenv-expand in your application code\"",
     "dev": "nodemon -r dotenv-expand/config src/app.js",
     "prod-preview": "node -r dotenv-expand/config src/app.js",
     "prod": "node src/app.js",
