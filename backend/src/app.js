@@ -1,8 +1,9 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static("build"));
+app.use(express.static(path.join(__dirname, "../", 'build')));
 
 console.log("process env: ", process.env);
 console.log("PORT: ", process.env.PORT);
@@ -38,6 +39,10 @@ app.put('/api/v1/user/:userId', (req, res) => {
 app.delete('/api/v1/user/:userId', (req, res) => {
   res.send(`Delete user by userId ${req.params.userId}`);
 })
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
